@@ -29,7 +29,6 @@ let currentDrawing: Drawing[] = [];
 
 router.ws('/draw', (ws, _req) => {
     connectedClient.push(ws);
-    console.log('Total connections: ', connectedClient.length);
 
     ws.send(JSON.stringify({
         action: 'DRAWING_SEND',
