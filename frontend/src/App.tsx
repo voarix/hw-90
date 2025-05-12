@@ -43,7 +43,10 @@ const App = () => {
 
     const drawDot = (dot: Drawing, ctx: CanvasRenderingContext2D) => {
         ctx.fillStyle = dot.color;
-        ctx.fillRect(dot.x - 2, dot.y - 2, 7, 7);
+        ctx.beginPath();
+
+        ctx.arc(dot.x, dot.y,  10, 0, 2 * Math.PI);
+        ctx.fill();
     };
 
     const drawAllDots = (dots: Drawing[], ctx: CanvasRenderingContext2D) => {
